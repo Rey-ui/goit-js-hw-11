@@ -63,7 +63,7 @@ function serchPicture(picture) {
     const urlParams = new URLSearchParams({
         key: API_KEY,
         q: picture,
-        type: "photo",
+        image_type: "photo",
         orientation: "horizontal",
         safesearch: true
     });
