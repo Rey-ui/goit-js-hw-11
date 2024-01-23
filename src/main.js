@@ -4,13 +4,14 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import './css/styles.css';
 const API_KEY = '41917530-74216f8e6af2c90f64ec8c0b5';
 const URL = "https://pixabay.com/api/";
 const formEl = document.querySelector(".form-inline");
 const containerEl = document.querySelector(".card-container");
 formEl.addEventListener("submit", handleSearch);
 function showLoadingIndicator() {
-    containerEl.innerHTML = '<p>Loading images, please wait...</p>';
+    containerEl.innerHTML = '<div class="loader"></div>';
 }
 function hideLoadingIndicator() {
     const loadingElement = containerEl.querySelector('.loading');
@@ -46,6 +47,7 @@ function handleSearch(event) {
                     captionPosition: 'bottom',
                     captionDelay: 250,
                 });
+                lightbox.refresh();
             } else {
                 iziToast.error({
                     title: "Error",
