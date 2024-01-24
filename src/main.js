@@ -14,7 +14,7 @@ function showLoadingIndicator() {
     containerEl.innerHTML = '<div class="loader"></div>';
 }
 function hideLoadingIndicator() {
-    const loadingElement = containerEl.querySelector('.loading');
+    const loadingElement = containerEl.querySelector('.loader');
     if (loadingElement) {
         loadingElement.remove();
     }
@@ -49,6 +49,7 @@ function handleSearch(event) {
                 });
                 lightbox.refresh();
             } else {
+                containerEl.innerHTML = "";
                 iziToast.error({
                     title: "Error",
                     message: `❌Sorry, there are no images matching your search query. Please, try again!`,
